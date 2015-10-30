@@ -1,37 +1,113 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jason White</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" style="text/css" href="css/style.css">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+  <script src="js/jquery-1.10.2.min.js"></script>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="rapper">
+    <header class="header">
+      <div class="title">
+        <a href="/">jason white</a>
+      </div>
+      <ul class="nav">
+        <li><a href="/#work">work</a></li>
+        <li><a href="/#about">about</a></li>
+      </ul>
+    </header>
 
-    {{ post.content }}
-  </article>
-  {% endfor %}
-</div>
+    <div class="work" id="work">
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+      <div class="works">
+        <a href="/patw.html"></a>
+        <img src="img/pat.jpg">
+        <div class="overlay">
+          <h3>Pat Wasserboehr</h3>
+          <h4>Web Design/Development</h4>
+        </div>
+      </div>
+
+      <div class="works">
+        <a href="/nikki.html"></a>
+        <img src="img/nikki.jpg">
+        <div class="overlay">
+          <h3>Nikki Blair</h3>
+          <h4>Web Design/Development</h4>
+        </div>
+      </div>
+
+      <div class="works">
+        <a href="/trustyourbarber.html"></a>
+        <img src="img/trustyourbarber.jpg">
+        <div class="overlay">
+          <h3>Trust Your Barber</h3>
+          <h4>Design/Concept/Print</h4>
+        </div>
+      </div>
+
+      <div class="works">
+        <a href="/rebelkale.html"></a>
+        <img src="img/rebelkale.jpg">
+        <div class="overlay">
+          <h3>Rebel Kale</h3>
+          <h4>Design/Concept/Print</h4>
+        </div>
+      </div>
+
+      <div class="works">
+        <a href="/whitelightning.html"></a>
+        <img src="img/whitelightning.png">
+        <div class="overlay">
+          <h3>White Lightning</h3>
+          <h4>Design/Concept</h4>
+        </div>
+      </div>
+
+    </div>
+    <div class="about" id="about">
+      <p>Jason is a freelance web and graphic designer currently living and working in Greensboro, North Carolina.</p>
+      <p>His work has a strong focus on functionality with a clean and minimal aesthetic.</p>
+      <p>You can find Jason in the usual places around the web. He shares photos on <a class="ig" href="https://instagram.com/qbrt/">Instagram</a> and <a class="flickr" href="https://www.flickr.com/photos/jasonwhite/">Flickr</a>, tweets on <a class="twitter" href="http://twitter.com/_qbert">Twitter</a> and jams out on <a class="spotify" href="https://open.spotify.com/user/jasonawhite">Spotify</a>. He's a nut for cast iron and loves his <a class="discogs" href="http://www.discogs.com/user/qbrt/collection">record collection</a>.</p>
+    </div>
+  </div>
+  <script>
+  <!--Smooth Scrolling-->
+   $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  }); 
+</script>
+</body>
+</html>
