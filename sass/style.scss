@@ -1,0 +1,333 @@
+/* Variables
+ * ======================================================*/
+$base-space: 2.4rem !default;
+$base-margin: 4.2rem !default;
+
+
+/* Mini Reset
+ * ======================================================*/
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    border: 0;
+    text-rendering: optimizeLegibility;
+  }
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+body {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f6f7f8;
+  color: #011627;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* MF Doom
+ * ======================================================*/
+.rapper {
+  max-width: 1200px;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* BYOW Grid
+ * ======================================================*/
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -$base-space;
+}
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    padding-left: $base-space;
+  }
+
+  .grid-left      { justify-content: flex-start; }
+  .grid-center    { justify-content: center; }
+  .grid-right     { justify-content: flex-end; }
+
+  .grid-baseline  { align-items: baseline; }
+  .grid-top       { align-items: flex-start; }
+  .grid-middle    { align-items: center; }
+  .grid-bottom    { align-items: flex-end; }
+
+
+/* Header
+ * ======================================================*/
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: .5rem solid #333;
+  margin-bottom: $base-space;
+  font-family: "Roboto Mono", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+}
+
+  .title {
+    flex: 1 1 auto;
+    a {
+      text-decoration: none;
+      color: #011627;
+      transition: color .3s;
+      &:hover {
+        color: #20a4f3;
+        transition: color .3s;
+      }
+    }
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    a {
+      display: block;
+      padding-left: 1rem;
+      text-decoration: none;
+      color: #011627;
+      transition: color .3s;
+      &:hover {
+        color: #20a4f3;
+        transition: color .3s;
+      }
+    }
+  }
+
+/* Work 
+ * ========================================================*/
+.work {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: $base-margin;
+}
+
+  .works {
+    position: relative;
+    flex: 1 1 33.3333333%;
+    overflow: hidden;
+  }
+
+  .overlay {
+    opacity:0;
+    position:absolute;
+    color: #fff;
+    background: #011627;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+    h4 {
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+
+  .works a {
+    position:absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 666;
+  }
+
+  .works:hover .overlay {
+    opacity: 0.8;
+    transition: opacity .3s;
+  }
+
+  @media all and (max-width: 600px) {
+    .works {
+      flex: 1 1 50%;
+    }
+
+    .works h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media all and (max-width: 800px) {
+    .works h3 {
+      font-size: 1.6rem;
+    }
+
+    .works h4 {
+      font-size: 1.2rem;
+    }
+  }
+
+/* Works Pages
+ * =======================================================*/
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: $base-margin;
+}
+
+  .pieces {
+    display: flex;
+    flex: 1 1 50%;
+    flex-flow: column nowrap;
+    h3 {
+      font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 2.4rem;
+      margin-bottom: $base-space;
+    }
+    p {
+      padding-right: 1rem;
+    }
+    a {
+      font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #20a4f3;
+      transition: color .3s;
+      &:hover {
+        color: #011627;
+        transition: color .3s;
+      }
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .gallery {
+      flex-flow: column nowrap;
+    }
+
+    .pieces {
+      margin-bottom: $base-space;
+    }
+
+    .pieces p {
+      padding-right: 0;
+    }
+  }
+
+/* About
+ * ========================================================*/
+.about {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: $base-space;
+    color: #444;
+    font-family: "Roboto Mono", "Helvetica Neue", Helvetica, arial, sans-serif;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+  @media all and (max-width: 800px) {
+    .about {
+      max-width: 90%;
+    }
+
+    .about p {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .about {
+      max-width: 100%;
+    }
+
+    .about p {
+      font-size: 1.5rem;
+    }
+  }
+
+.twitter {
+  color: #4099ff;
+}
+
+.ig {
+  color: #9b6954;
+}
+
+.spotify {
+  color: #23cf5f;
+}
+
+.flickr {
+  color: #ff0084;
+}
+
+.discogs {
+  color: #888;
+}
+
+.link {
+  color: #20a4f3;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  background-color: #011627;
+  color: #f6f7f8;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+  p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  a {
+    color: #f6f7f8;
+    text-decoration: underline;
+    transition: color .3s ease;
+    &:hover {
+      color: #20a4f3;
+      transition: color .3s ease;
+    }
+  }
+}
