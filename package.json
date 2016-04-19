@@ -1,10 +1,22 @@
 {
-  "name": "nikki-blair",
-  "version": "0.0.1",
+  "name": "fuji",
+  "version": "1.0.0",
+  "description": "susy test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-autoprefixer": "~0.6.5",
-    "grunt-contrib-sass": "~0.7.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-inject": "^4.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-svgstore": "^6.0.0"
   }
 }

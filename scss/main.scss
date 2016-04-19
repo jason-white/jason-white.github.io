@@ -1,0 +1,248 @@
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/typi/scss/typi";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "mixins";
+@import "colors";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800);
+
+$susy: (
+  container: auto,
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  container-position: left,
+);
+
+$breakpoints: (
+  small: 600px,
+  medium: 900px,
+  large: 1200px,
+);
+
+$typi: (
+  null: (16px, 1.4),
+  small: 16px,
+  medium: 18px,
+  large: 20px,
+);
+
+$fs: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$sm: max-width 600px;
+$md: max-width 900px;
+
+html {
+  @include typi-base();
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fs;
+  font-weight: 300;
+  background-color: $lightgray;
+  color: $white;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.rapper { 
+  @include container(75em);
+}
+
+$aside-width: 350px;
+
+  aside {
+    width: $aside-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 1rem;
+    color: $seagreen;
+    padding: 0 1.5em;
+    background-color: $black;
+    h1 {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: vr(1);
+      }
+    h3 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 1em;
+        margin-bottom: vr(2);
+        a {
+          color: darken($seagreen, 5%);
+          text-decoration: none;
+          &:hover {
+            color: lighten($seagreen, 10%);
+          }
+        }
+      }
+    ul.nav {
+      list-style: none;
+      li.nav-itm {
+        padding: vr(1);
+        border-top: 1px solid $seagreen;
+        &:last-of-type {
+          border-bottom: 1px solid $seagreen;
+        }
+        a {
+          color: $seagreen;
+          text-decoration: none;
+         }
+      }
+    }
+  }
+
+    .nav-itm:hover span { color: lighten($seagreen, 10%); }
+    .nav-itm:hover .icon { fill: lighten($seagreen, 10%); }
+
+    .icon {
+      height: 1.5em;
+      width: 1.5em;
+      fill: $seagreen;
+      vertical-align: bottom;
+      margin-right: vr(1);
+    }
+
+  .avatar-wrap {
+    height: 200px;
+    width: 200px;
+    margin: vr(2) auto vr(1) auto;
+  }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      fill: $black;
+      padding: vr(1);
+      background: $seagreen;
+      transition: fill .2s ease-in-out;
+    }
+
+    @include breakpoint($md) {
+      aside {
+        @include container(100%);
+        position: relative;
+        width: 100%;
+        header {
+          @include span(4);
+        }
+        ul.nav {
+          @include span(8 last);
+          padding-top: vr(2);
+          padding-left: vr(5);
+          li.nav-itm {
+            border: none;
+            &:last-of-type {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    @include breakpoint($sm) {
+      html { font-size: 90%; }
+      aside {
+        .icon { display: none; }
+        header {
+          width: 100%;
+          h3 {
+            margin-bottom: vr(1);
+          }
+        }
+        ul.nav {
+          width: 100%;
+          padding-top: 0;
+          padding-left: 0;
+          margin-bottom: vr(1);
+          text-align: center;
+          li.nav-itm {
+            display: inline-block;
+            padding: vr(1);
+          }
+        }
+      }
+    }
+
+main { 
+  margin-left: $aside-width;
+  margin-top: vr(1);
+  padding: 0 vr(1);
+  h2 {
+    font-size: 2.250em;
+    color: $black;
+    margin-bottom: vr(1);
+    letter-spacing: 1px;
+  }
+}
+
+  @include breakpoint($md) {
+    main {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .skills {
+    list-style-type: none;
+    margin-bottom: vr(1);
+    li {
+      display: inline-block;
+      font-size: 1.2em;
+      padding: vr(.5) vr(1);
+      margin-right: vr(1);
+      margin-bottom: vr(1);
+      background-color: $black;
+      color: $seagreen;
+      border-radius: 4px;
+      @include box_shadow(1);
+    }
+  }
+
+  .work {
+    list-style-type: none;
+    li {
+      display: list-item;
+      margin-bottom: vr(1);
+       h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $seagreen;
+        display: inline-block;
+        margin-right: vr(1);
+        &:hover {
+          color: darken($seagreen, 15%);
+        }
+      }
+       span {
+        font-size: .8em;
+        color: lighten($black, 20%);
+        text-transform: uppercase;
+        margin-right: vr(1);
+      }
+    }
+  }
+
+footer {
+  margin-left: $aside-width;
+  padding: vr(2) vr(1);
+  @include breakpoint ($md) {
+    margin-left: 0;
+  }
+  p {
+    color: $seagreen;
+    font-size: 1.2rem;
+  }
+}

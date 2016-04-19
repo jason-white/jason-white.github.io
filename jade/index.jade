@@ -1,0 +1,78 @@
+doctype html
+html
+  head
+    title Jason White
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    link(href="css/main.css", rel="stylesheet")
+    body
+      include svg-defs.html
+      .rapper
+        aside
+          header
+            div.avatar-wrap
+              svg(class="avatar")
+                use(xlink:href="#avatar")
+            h1 Jason White
+            h3: a(href="mailto:jasonawhite@gmail.com") jasonawhite@gmail.com
+          ul.nav
+            li.nav-itm
+              a(href="#")
+                svg(class="icon blog")
+                  use(xlink:href="#blog")
+                span Blog
+            li.nav-itm
+              a(href="http://twitter.com/_qbert" target="_blank")
+                svg(class="icon twitter")
+                  use(xlink:href="#twitter")
+                span Twitter
+            li.nav-itm
+              a(href="http://instagram.com/qbrt" target="_blank")
+                svg(class="icon instagram")
+                  use(xlink:href="#instagram")
+                span Instagram
+            li.nav-itm
+              a(href="http://flickr.com/photos/jasonwhite" target="_blank")
+                svg(class="icon flickr")
+                  use(xlink:href="#flickr")
+                span Flickr
+        main
+          h2 Skill Set
+          ul.skills
+            li HTML5
+            li CSS3
+            li Jade
+            li Sass
+            li Mixins
+            li Responsive Web Design
+            li Flexbox
+            li Javascript
+            li Sass Grids (Bourbon Neat, Susy)
+            li Frameworks (Foundation, Skeleton)
+            li Normalize and Resets
+            li OOCSS
+            li BEM
+            li Gulp and Grunt
+            li npm
+            li Bower
+            li Git
+            li Vim
+            li Adobe Creative Cloud
+          h2 Work
+          ul.work
+            li
+              a(href="http://nikkiblair.com/" target="_blank"): h3 Nikki Blair
+              span Design, Development, Photography
+            li
+              a(href="http://pwasserboehrsculptor.com/" target="_blank"): h3 Pat Wasserboehr
+              span Design, Development
+            li
+              a(href="#"): h3 East Coast Mobile Homes
+              span Design, Development
+            li
+              a(href="http://jasonwhite.us/home-page/" target="_blank"): h3 Start Page
+              span Design, Development
+        footer
+          p Jason is a freelance web developer ninja in self-training, currently living and working in Greensboro, North Carolina. This site was made with equal parts love and frustration.
