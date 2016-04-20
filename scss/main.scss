@@ -245,4 +245,11 @@ footer {
     color: $seagreen;
     font-size: 1.2rem;
   }
+  a {
+    color: $seagreen;
+    text-decoration: underline;
+    &:hover {
+      color: darken($seagreen, 10%);
+    }
+  }
 }
