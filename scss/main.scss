@@ -70,15 +70,15 @@ $aside-width: 350px;
     background-color: $black;
     h1 {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.2em;
         font-weight: 600;
-        margin-bottom: vr(1);
+        margin-bottom: vr(.5);
       }
     h3 {
         text-align: center;
         font-weight: 300;
-        font-size: 1em;
-        margin-bottom: vr(2);
+        font-size: .8em;
+        margin-bottom: vr(1.5);
         a {
           color: darken($seagreen, 5%);
           text-decoration: none;
@@ -90,7 +90,8 @@ $aside-width: 350px;
     ul.nav {
       list-style: none;
       li.nav-itm {
-        padding: vr(1);
+        font-size: 1em;
+        padding: vr(.8);
         border-top: 1px solid $seagreen;
         &:last-of-type {
           border-bottom: 1px solid $seagreen;
@@ -107,17 +108,17 @@ $aside-width: 350px;
     .nav-itm:hover .icon { fill: lighten($seagreen, 10%); }
 
     .icon {
-      height: 1.5em;
-      width: 1.5em;
+      height: vr(1);
+      width: vr(1);
       fill: $seagreen;
       vertical-align: bottom;
       margin-right: vr(1);
     }
 
   .avatar-wrap {
-    height: 200px;
-    width: 200px;
-    margin: vr(2) auto vr(1) auto;
+    height: 150px;
+    width: 150px;
+    margin: vr(1.5) auto vr(1) auto;
   }
 
     .avatar {
@@ -140,7 +141,6 @@ $aside-width: 350px;
         }
         ul.nav {
           @include span(8 last);
-          padding-top: vr(2);
           padding-left: vr(5);
           li.nav-itm {
             border: none;
@@ -237,13 +237,18 @@ main {
 
 footer {
   margin-left: $aside-width;
-  padding: vr(2) vr(1);
+  padding: vr(1) vr(1);
   @include breakpoint ($md) {
     margin-left: 0;
   }
+  h2 {
+    color: $black;
+    margin-bottom: vr(.5);
+  }
   p {
-    color: $seagreen;
+    color: darken($seagreen, 10%);
     font-size: 1.2rem;
+    margin-bottom: vr(1);
   }
   a {
     color: $seagreen;
