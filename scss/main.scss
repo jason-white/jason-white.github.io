@@ -54,10 +54,17 @@ body {
 
   .four04 {
     background-image: url("../img/adele-bg.jpg");
+    @include breakpoint($md) {
+      background-image: url("../img/adele-bg-md.jpg")
+    }
+    @include breakpoint($sm) {
+      background-image: url("../img/adele-bg-sm.jpg")
+    }
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
   }
+
 
     .four04__box {
       position: absolute;
