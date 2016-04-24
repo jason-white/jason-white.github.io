@@ -6,6 +6,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800);
 
+
+//Susy Grid Settings
 $susy: (
   container: auto,
   columns: 12,
@@ -16,23 +18,27 @@ $susy: (
   container-position: left,
 );
 
+//Breakpoints
+$sm: max-width 600px;
+$md: max-width 900px;
+
+//Typi Breakpoints
 $breakpoints: (
   small: 600px,
   medium: 900px,
   large: 1200px,
 );
 
-$typi: (
-  null: (16px, 1.4),
-  small: 16px,
-  medium: 18px,
-  large: 20px,
-);
+  //Typi Settings
+  $typi: (
+    null: (16px, 1.4),
+    small: 16px,
+    medium: 18px,
+    large: 20px,
+  );
 
+//Font Stack
 $fs: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$sm: max-width 600px;
-$md: max-width 900px;
 
 html {
   @include typi-base();
@@ -46,6 +52,33 @@ body {
   color: $white;
 }
 
+  .four04 {
+    background-image: url("../img/adele-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+  }
+
+    .four04__box {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+      .four04__message {
+        text-align: center;
+        h1 {
+          margin-bottom: vr(1);
+        }
+        a {
+          color: inherit;
+        }
+      }
+
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
@@ -56,8 +89,7 @@ body {
   @include container(75em);
 }
 
-$aside-width: 350px;
-
+  $aside-width: 350px;
   aside {
     width: $aside-width;
     position: fixed;
@@ -131,6 +163,7 @@ $aside-width: 350px;
       transition: fill .2s ease-in-out;
     }
 
+    //Medium Breakpoint Settings: Aside
     @include breakpoint($md) {
       aside {
         @include container(100%);
@@ -152,6 +185,7 @@ $aside-width: 350px;
       }
     }
 
+    //Small Breakpoint Settings: Aside
     @include breakpoint($sm) {
       html { font-size: 90%; }
       aside {
@@ -187,7 +221,7 @@ main {
     letter-spacing: 1px;
   }
 }
-
+  //Medium Breakpoint Settings: Main
   @include breakpoint($md) {
     main {
       width: 100%;
