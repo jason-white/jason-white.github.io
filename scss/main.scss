@@ -51,17 +51,15 @@ body {
   background-color: $lightgray;
   color: $white;
 }
-
+  //404 page attributes*
   .four04 {
     background-image: url("../img/adele-bg.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
-    position: relative;
+    background-position: center center;
+    background-size: cover;
   }
-
-
+    //* Using Flexbox for true vertical centering
     .four04__box {
-      position: absolute;
       height: 100vh;
       width: 100vw;
       background-color: rgba(0,0,0,0.5);
@@ -72,6 +70,7 @@ body {
 
       .four04__message {
         text-align: center;
+        text-shadow: 0 1px 3px $black;
         h1 {
           margin-bottom: vr(1);
         }
