@@ -1,0 +1,40 @@
+{
+  "name": "typi",
+  "version": "2.1.0",
+  "authors": [
+    "Zell Liew <zellwk@gmail.com>"
+  ],
+  "description": "Making responsive typography easy",
+  "main": "scss/_typi.scss",
+  "moduleType": [],
+  "keywords": [
+    "responsive",
+    "typography",
+    "type"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/zellwk/typi",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mappy-breakpoints": "~0.2.1",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "modular-scale": "~2.1.1"
+  },
+  "_release": "2.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.0",
+    "commit": "46f397d9757d206fd22f94c71015ad877c318736"
+  },
+  "_source": "https://github.com/zellwk/typi.git",
+  "_target": "^2.1.0",
+  "_originalSource": "typi",
+  "_direct": true
+}
