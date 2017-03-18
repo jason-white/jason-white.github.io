@@ -1,22 +1,38 @@
 doctype html
+
 html
   head
+
     title Jason White
+
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="keywords" content="web design, web development, webdev, greensboro, charlotte, north carolina, jason white")
-    meta(name="description" content="Jason is a front-end web developer in training looking to relocate to Charlotte, NC to work in a team environment.")
+    meta(name="description" content="Jason is a web developer living and working in Charlotte, NC.")
+
     link(href="css/main.css", rel="stylesheet")
+
     body
+      // Include SVG Sprite
       include svg-defs.html
-      .rapper
+
+      // Begin Page Rap - C.R.E.A.M.
+      section.rapper
+
+        // Begin Sidebar
         aside
+
+          // Begin Header
           header
+
             div.avatar-wrap
               svg(class="avatar")
                 use(xlink:href="#avatar")
             h1 Jason White
             h3: a(href="mailto:jasonawhite@gmail.com") jasonawhite@gmail.com
+          // End Header
+
+          // Begin Links
           ul.nav
             li.nav-itm
               a(href="http://codepen.io/qbert/pens/public/" target="_blank")
@@ -43,6 +59,10 @@ html
                 svg(class="icon flickr")
                   use(xlink:href="#flickr")
                 span Flickr
+          // End Links
+        // End Sidebar
+
+        // Begin Main
         main
           h2 Things I Use 
           ul.skills
@@ -51,33 +71,42 @@ html
             li Pug
             li Sass
             li Responsive Web Design
-            li Typi
             li Flexbox
             li SVG
             li JS
-            li Susy
-            li Frameworks (Bootstrap)
+            li Vue
             li Normalize
             li OOCSS
             li BEM
             li Gulp
             li npm
-            li Bower
             li Git
             li Adobe Creative Cloud
+
           h2 Work
           ul.work
             li
-              a(href="http://nikkiblair.com/" target="_blank"): h3 Nikki Blair
+              a(href="http://birdseyeenergy.com/" title="Birdseye Renewable Energy" target="_blank"): h3 Birdseye Renewable Energy
+              span Development
+            li
+              a(href="http://hmproperties.com/" title="HM Properties" target="_blank"): h3 HM Properties
+              span Development
+            li
+              a(href="http://nikkiblair.com/" title="Nikki Blair" target="_blank"): h3 Nikki Blair
               span Design, Development, Photography
             li
-              a(href="http://pwasserboehrsculptor.com/" target="_blank"): h3 Pat Wasserboehr
+              a(href="http://pwasserboehrsculptor.com/" title="Pat Wasserboehr" target="_blank"): h3 Pat Wasserboehr
               span Design, Development
             li
               a(href="http://jasonwhite.us/home-page/" target="_blank"): h3 Start Page
               span Design, Development
+        // End Main
+
+        // Begin Footer
         footer
-          h2 About me
-          p Front end web developer living and working in Charlotte, North Carolina.
+          h2 About
+          p Web developer living and working in Charlotte, North Carolina.
           p Also a huge <a href="http://www.last.fm/user/qbertqbert" target="_blank">music nerd</a> and <a href="https://www.discogs.com/user/qbrt/collection" target="_blank">vinyl enthusiast</a>.
           p This site is hosted on <a href="https://github.com/jason-white/jason-white.github.io" target="_blank">Github</a>.
+        // End Footer
+      // End Page Rap
