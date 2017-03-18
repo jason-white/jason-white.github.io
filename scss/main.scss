@@ -244,7 +244,7 @@ main {
       transition: 0.2s ease;
       @include box_shadow(1);
       &:hover {
-        @incude box_shadow(2);
+        @include box_shadow(2);
       }
     }
   }
