@@ -1,15 +1,15 @@
 var gulp          = require("gulp");
     autoprefixer  = require("gulp-autoprefixer");
-    jade          = require("gulp-jade");
+    pug           = require("gulp-pug");
     sass          = require("gulp-sass");
     svgstore      = require("gulp-svgstore");
     svgmin        = require("gulp-svgmin");
     sourcemaps    = require('gulp-sourcemaps');
 
 
-gulp.task("jade", function() {
-  gulp.src("./jade/*.jade")
-    .pipe(jade({
+gulp.task("pug", function() {
+  gulp.src("./pug/*.pug")
+    .pipe(pug({
       errLogToConsole: true
     }))
     .pipe(gulp.dest("./"));
@@ -35,9 +35,9 @@ gulp.task("sass", function() {
 });
 
 gulp.task("watch", function() {
-  gulp.watch("./jade/*.jade", ["jade"])
+  gulp.watch("./pug/*.pug", ["pug"])
   gulp.watch("./svg/**/*.svg", ["svgstore"])
   gulp.watch("./scss/**/*.scss", ["sass"])
 })
 
-gulp.task("default", ["jade", "svgstore", "sass", "watch"]);
+gulp.task("default", ["pug", "svgstore", "sass", "watch"]);
