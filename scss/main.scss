@@ -48,7 +48,7 @@ html {
 body {
   font-family: $fs;
   font-weight: 300;
-  background-color: $lightgray;
+  background-color: white;
   color: $white;
 }
   //404 page attributes*
@@ -244,7 +244,7 @@ main {
       transition: 0.2s ease;
       @include box_shadow(1);
       &:hover {
-        @include box_shadow(2);
+        @include box_shadow(3);
       }
     }
   }
