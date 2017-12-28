@@ -1,24 +1,30 @@
 {
-  "name": "fuji",
-  "version": "1.0.0",
-  "description": "susy test",
-  "main": "index.js",
+  "name": "jason-white.github.io",
+  "version": "0.1.0",
+  "description": "Personal website.",
+  "main": "Gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "me",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason-white/jason-white.github.io.git"
+  },
+  "keywords": [
+    "website",
+    "webpage",
+    "homepage"
+  ],
+  "author": "Jason White",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jason-white/jason-white.github.io/issues"
+  },
+  "homepage": "https://github.com/jason-white/jason-white.github.io#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cheerio": "^0.6.2",
-    "gulp-inject": "^4.0.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.12.0",
-    "gulp-svgmin": "^1.2.4",
-    "gulp-svgstore": "^6.0.0"
-  },
-  "dependencies": {
-    "gulp-pug": "^3.3.0"
+    "gulp-postcss": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "tailwindcss": "^0.4.0"
   }
 }

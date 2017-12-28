@@ -1,43 +1,21 @@
-var gulp          = require("gulp");
-    autoprefixer  = require("gulp-autoprefixer");
-    pug           = require("gulp-pug");
-    sass          = require("gulp-sass");
-    svgstore      = require("gulp-svgstore");
-    svgmin        = require("gulp-svgmin");
-    sourcemaps    = require('gulp-sourcemaps');
+const gulp = require('gulp')
+const postcss = require('gulp-postcss')
+const tailwindcss = require('tailwindcss')
+const sourcemaps = require('gulp-sourcemaps')
 
-
-gulp.task("pug", function() {
-  gulp.src("./pug/*.pug")
-    .pipe(pug({
-      errLogToConsole: true
-    }))
-    .pipe(gulp.dest("./"));
-  });
-
-gulp.task("svgstore", function() {
-  return gulp
-    .src("./svg/svg-defs/*.svg")
-    .pipe(svgmin())
-    .pipe(svgstore())
-    .pipe(gulp.dest("./svg"));
-});
-
-gulp.task("sass", function() {
-  gulp.src("./scss/**/*.scss")
+gulp.task('css', function () {
+  return gulp.src('./src/css/**/*.css')
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      errLogToConsole: true
-    }))
-    .pipe(autoprefixer("last 2 versions"))
+    .pipe(postcss([
+      tailwindcss('./tailwind.js'),
+      require('autoprefixer')
+    ]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./css"))
-});
-
-gulp.task("watch", function() {
-  gulp.watch("./pug/*.pug", ["pug"])
-  gulp.watch("./svg/**/*.svg", ["svgstore"])
-  gulp.watch("./scss/**/*.scss", ["sass"])
+    .pipe(gulp.dest('./build/css/'))
 })
 
-gulp.task("default", ["pug", "svgstore", "sass", "watch"]);
+gulp.task('watch', function () {
+  gulp.watch('./src/css/**/*.css', ['css'])
+})
+
+gulp.task('default', ['css', 'watch'])
