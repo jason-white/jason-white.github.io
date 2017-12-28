@@ -1,7 +1,7 @@
-const gulp = require('gulp')
-const postcss = require('gulp-postcss')
-const tailwindcss = require('tailwindcss')
-const sourcemaps = require('gulp-sourcemaps')
+import gulp from 'gulp'
+import postcss from 'gulp-postcss'
+import tailwindcss from 'tailwindcss'
+import sourcemaps from 'gulp-sourcemaps'
 
 gulp.task('css', function () {
   return gulp.src('./src/css/**/*.css')
